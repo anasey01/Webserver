@@ -1,0 +1,18 @@
+{
+    "name": "anasey/phpwebserver",
+    "description": "A webserver written in PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oluseyi Anani",
+            "email": "anasey@outlook.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "anasey\\Illuminate\\PHPWebServer\\": "src/"
+        }
+    }
+}

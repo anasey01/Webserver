@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+use anasey\Illuminate\PHPWebServer\Server;
+use anasey\Illuminate\PHPWebServer\Request;
+use anasey\Illuminate\PHPWebServer\Response;
+
+
+array_shift( $argv );
+
+//use port 80 if alternative port is not specified
+if ( empty( $argv ) )  
+{
+    $port = 80;
+} else {
+    $port = array_shift( $argv );
+}
+
+//bootstrap vendor file
+require 'vendor/autoload.php';
+
+// create a new server instance
+$server = new Server( '127.0.0.1', $port );
+
+// start listening
+$server->listen( function( Request $request ) 
+{
+    return new Response( 'Hello php server' );
+});
